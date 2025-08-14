@@ -1,12 +1,10 @@
-package com.lecture.portfolio
+package com.lecture.portfolio.domain.repository
 
 import com.lecture.portfolio.domain.constant.SkillType
 import com.lecture.portfolio.domain.entity.Project
 import com.lecture.portfolio.domain.entity.ProjectDetail
 import com.lecture.portfolio.domain.entity.ProjectSkill
 import com.lecture.portfolio.domain.entity.Skill
-import com.lecture.portfolio.domain.repository.ProjectRepository
-import com.lecture.portfolio.domain.repository.SkillRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
@@ -16,7 +14,7 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
 
 @DataJpaTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-class ProjectRepositoryTests(
+class ProjectRepositoryTest(
     @Autowired val projectRepository: ProjectRepository,
     @Autowired val skillRepository: SkillRepository,
 ) {

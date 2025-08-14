@@ -45,7 +45,7 @@ class Project(
     var details: MutableList<ProjectDetail> = mutableListOf()
 
     // mappedBy : 양방향 연관 관계에서 부모를 지정할 때 사용. 여기서는 project가 부모
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", fetch = FetchType.LAZY, cascade = [CascadeType.PERSIST])
     var skills: MutableList<ProjectSkill> = mutableListOf()
 
     fun getEndYearMonth(): String {
