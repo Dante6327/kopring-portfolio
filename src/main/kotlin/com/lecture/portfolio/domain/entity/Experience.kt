@@ -44,7 +44,7 @@ class Experience(
     // targetEntity : 자식 클래스 대상 지정
     // fetch : 연관된 자식 쿼리를 할지 말지. ORDINARY -> 연관된 자식 전부 쿼리 / LAZY -> 연관되지 않으면 쿼리 X
     // cascade : 부모에 변경사항이 생기면 자식에도 이 변경사항을 적용할지
-    @OneToMany(targetEntity = ExperienceDetail::class, fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+    @OneToMany(targetEntity = ExperienceDetail::class, fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
     @JoinColumn(name = "experience_id")
     var details: MutableList<ExperienceDetail> = mutableListOf()
 
